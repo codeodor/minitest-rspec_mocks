@@ -1,4 +1,4 @@
-minitest-rspec-mocks
+minitest_rspec_mocks
 ====================
 
 Monkeypatches to have minitest work with rspec-mocks
