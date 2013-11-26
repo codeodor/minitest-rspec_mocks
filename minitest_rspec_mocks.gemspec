@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'minitest_rspec_mocks'
 
 Gem::Specification.new do |spec|
-  spec.name          = "minitest-rspec-mocks"
+  spec.name          = "minitest_rspec_mocks"
   spec.version       = MinitestRSpecMocks::VERSION
   spec.authors       = ["Sammy Larbi"]
   spec.email         = ["sam@codeodor.com"]
