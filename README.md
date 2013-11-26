@@ -3,6 +3,16 @@ minitest-rspec-mocks
 
 Monkeypatches to have minitest work with rspec-mocks
 
+Use it:
+------
+`include MinitestRSpecMocks` in whichever test case classes you want rspec-mocks to be available. For example, if you're in a Rails project that uses minitest and you want rspec-mocks everywhere, you might do
+
+```ruby
+class ActiveSupport::TestCase
+  include MinitestRSpecMocks
+end
+```
+
 Why?
 ----
 If you use minitest/autorun, it patches its `stub` method onto `Object`. RSpec puts its version on `BasicObject` so it being further up the ancestor chain, it will rarely be used.
@@ -16,5 +26,3 @@ Install:
 Run the tests: 
 ----
 `git clone` this repository, then cd into it and run `ruby test/minitest_rspec_mocks_test.rb`
-
-
