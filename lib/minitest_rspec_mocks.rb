@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'rspec/mocks'
+require 'version'
 
 class Object
   # remove MiniTest's stub method so RSpec's version on BasicObject will work
@@ -10,10 +11,13 @@ class Object
 end
 
 module MinitestRSpecMocks
-  VERSION = "0.0.1"
-  
+  include RSpec::Mocks::ExampleMethods unless ::RSpec::Mocks::Version::STRING < "3"
   def before_setup
-    ::RSpec::Mocks.setup(self)
+    if ::RSpec::Mocks::Version::STRING < "3"
+      ::RSpec::Mocks.setup(self)
+    else
+      ::RSpec::Mocks.setup
+    end
     super
   end
   

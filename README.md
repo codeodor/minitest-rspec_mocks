@@ -10,8 +10,26 @@ Use it:
 ```ruby
 class ActiveSupport::TestCase
   include MinitestRSpecMocks
+  
+  def test_it_should_use_rspec_stub
+    RSpec::Mocks.configuration.syntax = :should
+    string = "hello"
+    assert string.to_i == 0
+    string.stub(to_i: 100)
+    assert string.to_i == 100
+  end
+  
+  def test_it_should_use_rspec_expect
+    RSpec::Mocks.configuration.syntax = :expect
+    string = "hello"
+    assert string.to_i == 0
+    expect(string).to receive(:to_i).and_return 100
+    assert string.to_i == 100
+  end
 end
 ```
+
+Note that RSpec 3 deprecates the `object.should` (where you use `object.stub(to_i: 100)`) style in favor of using the `expect` style syntax.
 
 Why?
 ----
@@ -25,4 +43,6 @@ Install:
 
 Run the tests: 
 ----
-`git clone` this repository, then cd into it and run `ruby test/minitest_rspec_mocks_test.rb`
+`git clone` this repository, then cd into it and run `bundle exec ruby test/minitest_rspec_mocks_test.rb`
+
+
