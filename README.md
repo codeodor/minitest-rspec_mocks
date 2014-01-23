@@ -1,7 +1,7 @@
-minitest_rspec_mocks
+minitest-rspec_mocks
 ====================
 
-Monkeypatches to have minitest work with rspec-mocks
+Monkeypatches to have minitest work with rspec-mocks. Note the name changed from `minitest_rspec_mocks` to `minitest-rspec_mocks` for consistency with the idea that this is a plugin for minitest.
 
 Use it:
 ------
