@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = MinitestRSpecMocks::VERSION
   spec.authors       = ["Sammy Larbi"]
   spec.email         = ["sam@codeodor.com"]
-  spec.description   = %q{Use rspec-mocks with minitest. A description of what this does doesn't get longer than that.}
-  spec.summary       = %q{Use rspec-mocks with minitest}
-  spec.homepage      = "https://github.com/codeodor/minitest_rspec_mocks"
+  spec.description   = %q{Name changed to minitest-rspec_mocks. Please grab the latest version under that name.}
+  spec.summary       = %q{Name changed to minitest-rspec_mocks.}
+  spec.homepage      = "https://github.com/codeodor/minitest-rspec_mocks"
   spec.license       = "MIT"
 
   spec.files         = ["lib/minitest_rspec_mocks.rb"]

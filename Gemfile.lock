@@ -1,36 +1,21 @@
-GIT
-  remote: https://github.com/rspec/rspec-mocks.git
-  revision: 7aaa623c5412e78448fe90b026c46fa0b47568e7
-  specs:
-    rspec-mocks (3.0.0.beta1)
-      rspec-support (= 3.0.0.beta1)
-
-GIT
-  remote: https://github.com/rspec/rspec-support.git
-  revision: c76d20840ca78ecd64db92b4aebd99bfd6433240
-  specs:
-    rspec-support (3.0.0.beta1)
-
 PATH
   remote: .
   specs:
-    minitest_rspec_mocks (0.0.2)
+    minitest_rspec_mocks (0.0.3)
       minitest (>= 4.0, < 5.3)
       rspec-mocks (>= 2.14, <= 3.0.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    minitest (5.2.1)
+    minitest (5.2.2)
     rake (10.1.1)
+    rspec-mocks (2.14.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bundler (~> 1.3)
-  minitest (= 5.2.1)
   minitest_rspec_mocks!
   rake
-  rspec-mocks!
-  rspec-support!
