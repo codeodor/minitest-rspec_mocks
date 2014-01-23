@@ -5,11 +5,11 @@ Monkeypatches to have minitest work with rspec-mocks
 
 Use it:
 ------
-`include MinitestRSpecMocks` in whichever test case classes you want rspec-mocks to be available. For example, if you're in a Rails project that uses minitest and you want rspec-mocks everywhere, you might do
+`include Minitest::RSpecMocks` in whichever test case classes you want rspec-mocks to be available. For example, if you're in a Rails project that uses minitest and you want rspec-mocks everywhere, you might do
 
 ```ruby
 class ActiveSupport::TestCase
-  include MinitestRSpecMocks
+  include Minitest::RSpecMocks
   
   def test_it_should_use_rspec_stub
     RSpec::Mocks.configuration.syntax = :should
@@ -39,10 +39,10 @@ Also there is a little bit of setup / teardown you need to do a la http://myronm
 
 Install: 
 ----
-`gem "minitest_rspec_mocks"` in your Gemfile
+`gem "minitest-rspec_mocks"` in your Gemfile
 
 Run the tests: 
 ----
-`git clone` this repository, then cd into it and run `bundle exec ruby test/minitest_rspec_mocks_test.rb`
+`git clone` this repository, then cd into it and run `bundle exec ruby test/minitest/rspec_mocks_test.rb`
 
 
