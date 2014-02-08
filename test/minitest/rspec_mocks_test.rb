@@ -6,7 +6,7 @@ require "minitest/autorun"
 # when we require minitest_spec_mocks, so it doesn't make sense to 
 # have this test. 
 #
-# class MinitestWithoutRspecMocksTest < Minitest::Unit::TestCase
+# class MiniTestWithoutRspecMocksTest < MiniTest::Unit::TestCase
 #   def test_it_should_use_minitest_stub
 #     string = "hello"
 #     string.stub(:to_i, 100) do
@@ -15,8 +15,8 @@ require "minitest/autorun"
 #   end
 # end
 
-class MinitestWithRspecMocksShouldStyleTest < Minitest::Unit::TestCase
-  include Minitest::RSpecMocks
+class MiniTestWithRspecMocksShouldStyleTest < MiniTest::Unit::TestCase
+  include MiniTest::RSpecMocks
   def test_it_should_use_rspec_stub
     RSpec::Mocks.configuration.syntax = :should
     string = "hello"
@@ -26,8 +26,8 @@ class MinitestWithRspecMocksShouldStyleTest < Minitest::Unit::TestCase
   end
 end
 
-class MinitestWithRspecMocksExpectStyleTest < Minitest::Unit::TestCase
-  include Minitest::RSpecMocks
+class MiniTestWithRspecMocksExpectStyleTest < MiniTest::Unit::TestCase
+  include MiniTest::RSpecMocks
   def test_it_should_use_rspec_expect
     RSpec::Mocks.configuration.syntax = :expect
     string = "hello"

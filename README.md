@@ -5,11 +5,11 @@ Monkeypatches to have minitest work with rspec-mocks. Note the name changed from
 
 Use it:
 ------
-`include Minitest::RSpecMocks` in whichever test case classes you want rspec-mocks to be available. For example, if you're in a Rails project that uses minitest and you want rspec-mocks everywhere, you might do
+`include MiniTest::RSpecMocks` in whichever test case classes you want rspec-mocks to be available. For example, if you're in a Rails project that uses minitest and you want rspec-mocks everywhere, you might do
 
 ```ruby
 class ActiveSupport::TestCase
-  include Minitest::RSpecMocks
+  include MiniTest::RSpecMocks
   
   def test_it_should_use_rspec_stub
     RSpec::Mocks.configuration.syntax = :should

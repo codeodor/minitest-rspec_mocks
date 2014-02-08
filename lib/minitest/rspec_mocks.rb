@@ -1,16 +1,16 @@
 require 'minitest/autorun'
 require 'rspec/mocks'
-require 'minitest/rspec_mocks/version'
+require_relative './rspec_mocks/version'
 
 class Object
-  # remove Minitest's stub method so RSpec's version on BasicObject will work
+  # remove MiniTest's stub method so RSpec's version on BasicObject will work
   if self.method_defined?(:stub) && !defined?(removed_minitest)
     remove_method :stub
     removed_minitest = true
   end
 end
 
-module Minitest
+module MiniTest
   module RSpecMocks
     include RSpec::Mocks::ExampleMethods unless ::RSpec::Mocks::Version::STRING < "3"
     def before_setup

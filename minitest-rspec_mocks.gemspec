@@ -5,7 +5,7 @@ require 'minitest/rspec_mocks/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "minitest-rspec_mocks"
-  spec.version       = Minitest::RSpecMocks::VERSION
+  spec.version       = MiniTest::RSpecMocks::VERSION
   spec.authors       = ["Sammy Larbi"]
   spec.email         = ["sam@codeodor.com"]
   spec.description   = %q{Use rspec-mocks with minitest. A description of what this does doesn't get longer than that.}
