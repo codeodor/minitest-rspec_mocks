@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/codeodor/minitest-rspec_mocks"
   spec.license       = "MIT"
 
-  spec.files         = ["lib/minitest/rspec_mocks.rb", "lib/minitest/spec_mocks/version.rb"]
+  spec.files         = ["lib/minitest/rspec_mocks.rb", "lib/minitest/rspec_mocks/version.rb"]
   spec.executables   = []
   spec.test_files    = ["test/minitest/rspec_mocks_test.rb"]
   spec.require_paths = ["lib"]
