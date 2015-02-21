@@ -1,5 +1,6 @@
 minitest-rspec_mocks
 ====================
+[![Build Status](https://travis-ci.org/codeodor/minitest-rspec_mocks.svg)](https://travis-ci.org/codeodor/minitest-rspec_mocks)
 
 Monkeypatches to have minitest work with rspec-mocks. Note the name changed from `minitest_rspec_mocks` to `minitest-rspec_mocks` for consistency with the idea that this is a plugin for minitest.
 
