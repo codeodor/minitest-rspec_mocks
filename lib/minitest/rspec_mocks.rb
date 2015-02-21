@@ -21,7 +21,7 @@ module Minitest
       end
       super
     end
-  
+
     def after_teardown
       begin
         ::RSpec::Mocks.verify
