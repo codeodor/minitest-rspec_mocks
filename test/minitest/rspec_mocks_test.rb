@@ -2,6 +2,12 @@ gem 'minitest'
 require_relative '../../lib/minitest/rspec_mocks'
 require "minitest/autorun"
 
+base_class = if MiniTest.const_defined?(:Unit)
+               MiniTest::Unit::TestCase
+             else
+               Minitest::Test
+             end
+
 # I am not sure how/if this test ever passed. We remove minitest stub 
 # when we require minitest_spec_mocks, so it doesn't make sense to 
 # have this test. 
@@ -15,7 +21,7 @@ require "minitest/autorun"
 #   end
 # end
 
-class MiniTestWithRspecMocksShouldStyleTest < MiniTest::Unit::TestCase
+class MiniTestWithRspecMocksShouldStyleTest < base_class
   include MiniTest::RSpecMocks
   def test_it_should_use_rspec_stub
     RSpec::Mocks.configuration.syntax = :should
@@ -26,7 +32,7 @@ class MiniTestWithRspecMocksShouldStyleTest < MiniTest::Unit::TestCase
   end
 end
 
-class MiniTestWithRspecMocksExpectStyleTest < MiniTest::Unit::TestCase
+class MiniTestWithRspecMocksExpectStyleTest < base_class
   include MiniTest::RSpecMocks
   def test_it_should_use_rspec_expect
     RSpec::Mocks.configuration.syntax = :expect
