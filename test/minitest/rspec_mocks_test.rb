@@ -8,6 +8,10 @@ base_class = if MiniTest.const_defined?(:Unit)
                Minitest::Test
              end
 
+class TestBase < base_class
+  include Minitest::RSpecMocks
+end
+
 # I am not sure how/if this test ever passed. We remove minitest stub 
 # when we require minitest_spec_mocks, so it doesn't make sense to 
 # have this test. 
@@ -21,8 +25,7 @@ base_class = if MiniTest.const_defined?(:Unit)
 #   end
 # end
 
-class MiniTestWithRspecMocksShouldStyleTest < base_class
-  include MiniTest::RSpecMocks
+class MiniTestWithRspecMocksShouldStyleTest < TestBase
   def test_it_should_use_rspec_stub
     RSpec::Mocks.configuration.syntax = :should
     string = "hello"
@@ -32,8 +35,7 @@ class MiniTestWithRspecMocksShouldStyleTest < base_class
   end
 end
 
-class MiniTestWithRspecMocksExpectStyleTest < base_class
-  include MiniTest::RSpecMocks
+class MiniTestWithRspecMocksExpectStyleTest < TestBase
   def test_it_should_use_rspec_expect
     RSpec::Mocks.configuration.syntax = :expect
     string = "hello"
