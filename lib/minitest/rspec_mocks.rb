@@ -7,6 +7,7 @@ class Object
   if self.method_defined?(:stub) && !defined?(removed_minitest_stub)
     remove_method :stub
     removed_minitest_stub = true
+    removed_minitest_stub
   end
 end
 
@@ -17,6 +18,7 @@ class Minitest::Spec
       if self.method_defined?(:expect) && !defined?(removed_minitest_expect)
         remove_method :expect
         removed_minitest_expect = true
+        removed_minitest_expect
       end
     end
   end
