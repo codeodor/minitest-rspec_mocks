@@ -4,9 +4,21 @@ require_relative './rspec_mocks/version'
 
 class Object
   # remove Minitest's stub method so RSpec's version on BasicObject will work
-  if self.method_defined?(:stub) && !defined?(removed_minitest)
+  if self.method_defined?(:stub) && !defined?(removed_minitest_stub)
     remove_method :stub
-    removed_minitest = true
+    removed_minitest_stub = true
+  end
+end
+
+class Minitest::Spec
+  module DSL
+    module InstanceMethods
+      # remove Minitest's stub method so RSpec's version on BasicObject will work
+      if self.method_defined?(:expect) && !defined?(removed_minitest_expect)
+        remove_method :expect
+        removed_minitest_expect = true
+      end
+    end
   end
 end
 
