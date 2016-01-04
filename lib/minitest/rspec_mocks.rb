@@ -1,4 +1,4 @@
-require 'minitest/autorun'
+require 'minitest/mock'
 require 'rspec/mocks'
 require_relative './rspec_mocks/version'
 

@@ -1,6 +1,6 @@
 gem 'minitest'
-require_relative '../../lib/minitest/rspec_mocks'
 require "minitest/autorun"
+require_relative '../../lib/minitest/rspec_mocks'
 
 base_class = if MiniTest.const_defined?(:Unit)
                MiniTest::Unit::TestCase
